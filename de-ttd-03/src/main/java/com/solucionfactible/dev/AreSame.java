@@ -12,7 +12,7 @@ public class AreSame {
 
     public static boolean comp(int[] a, int[] b) {
 
-        boolean toReturn = true;
+        boolean ret = true;
 
         if (a == null || b == null) {
             return false;
@@ -33,7 +33,7 @@ public class AreSame {
             if (a[i] != b[i])
                 return false;
 
-        return toReturn;
+        return ret;
     }
 
 }

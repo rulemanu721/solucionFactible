@@ -11,11 +11,14 @@ public class Persistence {
     public static int persistence(long num) {
         int result = 0;
         while (num > 9) {
-            long multi = 1;
-            for (char t : String.valueOf(num).toCharArray()) {
-                multi *= Long.parseLong(String.valueOf(t));
+            long mul = 1;
+            String numStr = String.valueOf(num);
+            char[] charArray = numStr.toCharArray();
+            for (int i = 0; i < charArray.length; i++) {
+                char t = charArray[i];
+                mul *= Long.parseLong(String.valueOf(t));
             }
-            num = multi;
+            num = mul;
             result++;
         }
         return result;

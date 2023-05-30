@@ -10,8 +10,11 @@ public class ValidatePIN {
 
 	public static boolean isValid(String pin) {
 		if (pin.length() == 4 || pin.length() == 6) {
-			for (char c : pin.toCharArray()) {
-				if (!Character.isDigit(c)) return false;
+			for (int i = 0; i < pin.length(); i++) {
+				char c = pin.charAt(i);
+				if (!Character.isDigit(c)) {
+					return false;
+				}
 			}
 			return true;
 		} else {

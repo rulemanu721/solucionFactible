@@ -14,9 +14,15 @@ public class FindMissingLetter {
 
     public static char findMissingLetter(char[] array) {
 
-        int[] nums = new String(array).chars().sorted().toArray();
-        int pos = IntStream.range(1, nums.length).filter(index -> (nums[index] - nums[index - 1] != 1)).findFirst().getAsInt();
-        return (char) (nums[pos] - 1);
+        int[] num = new String(array).chars().sorted().toArray();
+        int pos = -1;
+        for (int i = 1; i < num.length; i++) {
+            if (num[i] - num[i - 1] != 1) {
+                pos = i;
+                break;
+            }
+        }
+        return (char) (num[pos] - 1);
     }
 
 }

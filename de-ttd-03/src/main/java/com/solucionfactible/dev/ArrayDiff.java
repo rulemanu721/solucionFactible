@@ -23,19 +23,19 @@ public class ArrayDiff {
                 }
             }
             result = new int[size];
-            int index = 0;
-            int countEq = 0;
+            int ind = 0;
+            int count = 0;
             for (int i = 0; i < a.length; i++) {
-                countEq = 0;
+                count = 0;
                 for (int j = 0; j < b.length; j++) {
                     if (a[i] == b[j]) {
-                        countEq++;
+                        count++;
                         break;
                     }
                 }
-                if (countEq == 0) {
-                    result[index] = a[i];
-                    index++;
+                if (count == 0) {
+                    result[ind] = a[i];
+                    ind++;
                 }
             }
         }
